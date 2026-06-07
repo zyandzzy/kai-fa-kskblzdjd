@@ -1,7 +1,8 @@
 package cn.edu.whut.sept.zuul;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 简单的 REST 控制器，用于验证 Spring Boot 应用正常启动。
@@ -13,15 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
  * @author sept
  * @since 1.0
  */
-@RestController
+@Controller
 public class HomeController {
 
     @GetMapping("/")
-    public String home() {
-        return "World of Zuul Server is running!";
+    public String homePage() {
+        return "forward:/index.html";
+    }
+
+    @GetMapping("/game")
+    public String gamePage() {
+        return "forward:/game.html";
     }
 
     @GetMapping("/health")
+    @ResponseBody
     public String health() {
         return "OK";
     }
