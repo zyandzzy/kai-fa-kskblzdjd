@@ -192,7 +192,7 @@
             }
             sessionStorage.setItem("token", token);
             window.location.href = "/game";
-        } catch (_) {
+        } catch (err) {
             loginError.textContent = "登录失败，请稍后重试";
         }
     });
@@ -234,7 +234,7 @@
             document.getElementById("loginUsername").value = username;
             document.getElementById("loginPassword").value = "";
             switchTab(true);
-        } catch (_) {
+        } catch (err) {
             registerError.textContent = "注册失败，请稍后重试";
             registerError.classList.remove("ok");
         }

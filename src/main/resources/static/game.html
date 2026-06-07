@@ -21,29 +21,18 @@
             border-radius: 12px;
             background: #1e293b;
         }
-        code {
-            display: block;
-            margin-top: 8px;
-            padding: 10px;
-            border-radius: 8px;
-            background: #0f172a;
-            word-break: break-all;
-        }
     </style>
 </head>
 <body>
 <section class="box">
     <h1>已进入游戏页面</h1>
     <p>主界面开发中，当前用于验证登录跳转流程。</p>
-    <p>Session Token：</p>
-    <code id="token">未检测到 token</code>
+    <p id="status">登录态校验通过。</p>
 </section>
 <script>
     const token = sessionStorage.getItem("token");
     if (!token) {
         window.location.href = "/";
-    } else {
-        document.getElementById("token").textContent = token;
     }
 </script>
 </body>
