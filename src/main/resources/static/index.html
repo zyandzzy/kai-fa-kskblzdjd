@@ -147,6 +147,7 @@
 </div>
 
 <script>
+    const SWITCH_TAB_DELAY_MS = 600;
     const loginTab = document.getElementById('loginTab');
     const registerTab = document.getElementById('registerTab');
     const loginForm = document.getElementById('loginForm');
@@ -246,7 +247,7 @@
 
             registerSuccess.textContent = '注册成功，请登录';
             registerForm.reset();
-            setTimeout(() => switchTab(true), 600);
+            setTimeout(() => switchTab(true), SWITCH_TAB_DELAY_MS);
         } catch (e) {
             registerError.textContent = '网络异常，请稍后重试';
         }

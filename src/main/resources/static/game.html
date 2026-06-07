@@ -22,5 +22,11 @@
     <h1>游戏页面</h1>
     <p>登录成功，已跳转到 /game。</p>
 </div>
+<script>
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+        window.location.replace('/');
+    }
+</script>
 </body>
 </html>
